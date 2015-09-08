@@ -39,28 +39,33 @@ project2 = Project.new( 'plate iq', 654, 1200 );
 project3 = Project.new( 'bagaveev', 1128, 2200 );
 project4 = Project.new( 'flaviar', 2912, 4200 );
 
-puts project1
-puts project2
-puts project3
-puts project4
+projects = Array.new
+projects.push( project1 )
+projects.push( project2 )
+projects.push( project3 )
+projects.push( project4 )
 
-project1.add_fund
-project2.add_fund
-project3.remove_fund
-project4.add_fund
+puts "Ate o momento o programa conta com #{projects.length} projetos. Sao eles:"
+puts "\n"
+projects.each do |project|
+	puts project
+end
 
-puts project1
-puts project2
-puts project3
-puts project4
+puts "\n" + "-------------------------------------------".center(50) + "\n\n"
+projects.each do |project|
+	project.remove_fund
+	project.add_fund
+	project.add_fund
+	project.add_fund
+	project.remove_fund
+end
 
-project1.name = "parkav international"
-puts project1.name
-puts project2.funding
-puts project1.target_funding
-puts project1.funding_left
+puts "\n" + "-------------------------------------------".center(50) + "\n\n"
+# puts "\n\n"
+puts "Apos uma semana conturbada com novos investimentos aplicados e outros removidos, os projetos do programa ficaram assim:"
+puts "\n"
+projects.each do |project|
+	puts project
+end
 
-puts project1
-puts project2
-puts project3
-puts project4
+

@@ -1,0 +1,66 @@
+# Foundraising Program
+# Dados baseados em https://wefunder.me/
+
+class Project
+	attr_reader :funding, :target_funding
+	attr_accessor :name
+
+	def initialize( name, funding, target_funding )
+		@name = name.capitalize
+		@funding = funding
+		@target_funding = target_funding
+	end
+
+	def to_s
+		"O projeto #{@name.upcase} tem investimento acumulado de R$ #{@funding} de R$ #{@target_funding} desejados. Faltam R$ #{funding_left} para o objetivo ser alcancado!"
+	end
+
+	def add_fund
+		@funding += 25
+		puts "O projeto #{@name.upcase} recebeu mais fundos =D."
+	end
+
+	def remove_fund
+		@funding -= 15
+		puts "O projeto #{@name.upcase} perdeu alguns fundos =(."
+	end
+
+	def funding_left
+		target_funding - funding
+	end
+
+	def name=(new_name)
+		@name = new_name.capitalize
+	end
+end
+
+project1 = Project.new( 'parkav', 669, 900 );
+project2 = Project.new( 'plate iq', 654, 1200 );
+project3 = Project.new( 'bagaveev', 1128, 2200 );
+project4 = Project.new( 'flaviar', 2912, 4200 );
+
+puts project1
+puts project2
+puts project3
+puts project4
+
+project1.add_fund
+project2.add_fund
+project3.remove_fund
+project4.add_fund
+
+puts project1
+puts project2
+puts project3
+puts project4
+
+project1.name = "parkav international"
+puts project1.name
+puts project2.funding
+puts project1.target_funding
+puts project1.funding_left
+
+puts project1
+puts project2
+puts project3
+puts project4

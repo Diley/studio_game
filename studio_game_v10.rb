@@ -80,34 +80,3 @@ chipmunks.add_player(player4)
 chipmunks.add_player(player5)
 chipmunks.add_player(player6)
 chipmunks.play
-
-
-# Exercicio 2
-# players = [player1, player2, player3]
-
-# puts "There are #{players.size} players in the game"
-
-# players.each do |player|
-# 	puts player
-# end
-
-# # Exercicio 3.1
-# players.each do |player|
-# 	puts player.health
-# end
-
-# # Exercicio 3.2
-# players.each do |player|
-# 	player.blam
-# 	player.w00t
-# 	player.w00t
-# 	puts player
-# end
-
-# # Exercicio 3.3
-# players.pop
-# players.push( Player.new("shemp", 90) )
-
-# players.each do |player|
-# 	puts player.health
-# end

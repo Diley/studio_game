@@ -1,0 +1,3 @@
+rspec
+
+rspec file_spec.rb --color --format doc

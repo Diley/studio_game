@@ -61,5 +61,9 @@ class Game
 		end
 	end
 
+	def total_points
+		@players.reduce(0) { |sum, player| sum + player.points }
+	end
+
 end
 

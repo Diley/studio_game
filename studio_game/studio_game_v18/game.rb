@@ -30,6 +30,10 @@ class Game
 				GameTurn.take_turn(player)
 				puts player
 			end
+			puts "Points at the end of the #{round}round: #{total_points}"
+			if yield
+				break
+			end
 		end
 	end
 
@@ -52,7 +56,11 @@ class Game
 		# sorted_players = @players.sort_by { |player| player.score } .reverse
 		# sorted_players = @players.sort { |x,y| y.score <=> x.score }
 		@players.each do |player|
-			puts "\n#{player.name}'s total points:\n#{player.points} grand total points"
+			puts "\n#{player.name}'s points totals:"
+			player.each_found_treasure do | treasure |
+				puts "#{treasure.points} total #{treasure.name} points"
+			end
+			puts "#{player.points} grand total points"
 		end
 
 		puts "\n\n#{@title}'s High Scores"

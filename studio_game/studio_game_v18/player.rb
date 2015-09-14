@@ -12,6 +12,13 @@ class Player
 		@found_treasures = Hash.new(0)
 	end
 
+	def each_found_treasure
+		@found_treasures.each do |name, points|
+			treasure = Treasure.new(name,points)
+			yield treasure
+		end
+	end
+
 	def found_treasure(treasure)
 		@found_treasures[treasure.name] += treasure.points
 		puts "#{@name} found a #{treasure.name} worth #{treasure.points} points"

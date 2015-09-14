@@ -50,6 +50,8 @@ class FundRequest
 
 		puts "\nProjects with more fundings left"
 		under_funded.sort.each { |project| puts print_project_funding_left(project) }
+
+		
 		# @projects.sort.each { |project| puts print_project_funding_left(project) unless project.fully_funded? }
 	end
 

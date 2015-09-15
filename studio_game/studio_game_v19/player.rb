@@ -39,7 +39,7 @@ class Player
 		# true
 	end
 	
-	def to_s()
+	def to_s
 		"I'm #{@name} with a health of #{@health}, points = #{points}, and score of = #{score}."
 	end
 

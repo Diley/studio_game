@@ -1,10 +1,20 @@
 require_relative 'player'
 
 class ClumsyPlayer < Player
+  attr_reader :boost_factor
+
+  def initialize(name, health, boost_factor=15)
+    super(name,health)
+    @boost_factor = boost_factor
+  end
 
   def found_treasure(treasure)
     super( Treasure.new(treasure.name, treasure.points / 2.0) )
     # puts "#{@name}'s treasures: #{@found_treasures}"
+  end
+
+  def w00t
+    @boost_factor.times { super }
   end
 
 end

@@ -4,7 +4,9 @@ describe ClumsyPlayer do
   $stdout = StringIO.new
 
   before do
-    @player = ClumsyPlayer.new("klutz")
+    @initial_health = 100
+    @boost_factor = 4
+    @player = ClumsyPlayer.new("klutz", @initial_health, @boost_factor)
   end
 
   it "only gets half the point value for each treasure" do
@@ -32,6 +34,11 @@ describe ClumsyPlayer do
 
 
     expect(yielded).to eq([Treasure.new(:hammer, 75), Treasure.new(:crowbar, 200)])
+  end
+
+  it "receives several w00ts when w00ted" do
+    @player.w00t
+    expect(@player.health).to eq(@initial_health + @boost_factor*15)
   end
 
 end

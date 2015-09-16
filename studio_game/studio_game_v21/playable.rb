@@ -2,17 +2,17 @@
 module Playable
 
   def blam
-    @health -= 10
-    puts "#{@name} got blammed"
+    self.health -= 10
+    puts "#{self.name} got blammed"
   end
 
   def w00t
-    @health += 15
-    puts "#{@name} got w00ted"
+    self.health += 15
+    puts "#{self.name} got w00ted"
   end
 
   def strong?
-    @health > 100
+    self.health > 100
     # true
   end
 

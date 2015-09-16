@@ -2,7 +2,7 @@ require_relative 'game'
 
 describe Game do
 
-	$stdout = StringIO.new
+	# $stdout = StringIO.new
 
 	before do
 		@game = Game.new("Knuckleheads")

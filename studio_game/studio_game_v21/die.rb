@@ -1,11 +1,11 @@
 require_relative 'auditable'
 
 class Die 
-  attr_reader :number
   include Auditable
+  attr_reader :number
 
 	def initialize
-		roll
+		@number = roll
 	end
 
 	def roll

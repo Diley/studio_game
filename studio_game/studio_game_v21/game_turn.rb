@@ -7,8 +7,9 @@ module GameTurn
 	def self.take_turn(player)
 		puts "\nPlayer turn: #{player.name}"
 		die = Die.new
-		# die = LoadedDie.new
 		number_rolled = die.number
+
+		puts "number_rolled: #{number_rolled}"
 
 		case number_rolled
 			when 1..2

@@ -1,7 +1,7 @@
 require 'stringio' # Adiciona StringIO 
-require_relative 'spec_helper'
-require_relative 'player'
-require_relative 'treasure_trove'
+# require 'studio_game/spec_helper'
+require 'studio_game/player'
+require 'studio_game/treasure_trove'
 
 module StudioGame
 	describe Player do
@@ -111,8 +111,8 @@ module StudioGame
 
 			it "has a strong status" do
 				# expect(@player.strong?).to eq(true)
-				# expect(@player).to be_strong
-				@player.should be_strong
+				expect(@player).to be_strong
+				# @player.should be_strong
 			end
 		end
 
@@ -138,7 +138,8 @@ module StudioGame
 				@players = [@player1, @player2, @player3]
 			end
 			it "is sorted by decreasing score" do
-				@players.sort.should == [@player3, @player2, @player1]
+				# @players.sort.should == [@player3, @player2, @player1]
+				expect(@players.sort).to eq([@player3, @player2, @player1])
 			end
 		end
 

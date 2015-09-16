@@ -1,4 +1,4 @@
-require_relative 'berserk_player'
+require 'studio_game/berserk_player'
 require 'stringio'
 
 module StudioGame
